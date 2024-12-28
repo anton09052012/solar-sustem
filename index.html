@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GG</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #0d1117;
+            color: #c9d1d9;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        h1 {
+            margin-top: 20px;
+            font-size: 4em;
+            color: #58a6ff;
+            text-shadow: 0 0 15px rgba(88, 166, 255, 0.8), 0 0 30px rgba(88, 166, 255, 0.6);
+        }
+
+        .tree {
+            font-size: 5em;
+            margin: 50px auto;
+            color: #39d353;
+        }
+
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            color: #f0f6fc;
+            font-size: 1em;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+
+        footer {
+            position: fixed;
+            bottom: 10px;
+            width: 100%;
+            color: #8b949e;
+            font-size: 1em;
+        }
+
+        footer a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>GG</h1>
+    <div class="tree">🎮✨🕹</div>
+
+    <script>
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.className = 'snowflake';
+            snowflake.textContent = '✨';
+            snowflake.style.left = Math.random() * window.innerWidth + 'px';
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+            snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
+            document.body.appendChild(snowflake);
+
+            snowflake.addEventListener('animationend', () => {
+                snowflake.remove();
+            });
+        }
+
+        setInterval(createSnowflake, 100);
+    </script>
+
+    <footer>
+        Made for gamers | <a href="https://youtu.be/bpmeHdOvoX0?si=oXY5pkZfAkxST2pK">Contact Us</a>
+    </footer>
+</body>
+</html>
